@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mysql-server
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        value: rootpassword
+      - key: MYSQL_DATABASE
+        value: basedatos
+      - key: MYSQL_USER
+        value: usuario
+      - key: MYSQL_PASSWORD
+        value: contrasena
+    ports:
+      - port: 3306
+        protocol: tcp
